@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Movies</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/foundation.min.css">
+  </head>
+
+    <table>
+      <thead class= "header">
+        <tr>
+        <th><span><%=@movie_table[0].keys[0]%></span></th>
+        <th><span><%=@movie_table[0].keys[1]%></span></th>
+        <th><span><%=@movie_table[0].keys[2]%></span></th>
+        <th><span><%=@movie_table[0].keys[3]%></span></th>
+        <th><span><%=@movie_table[0].keys[4]%></span></th>
+      </tr>
+    </thead>
+
+
+    <tbody class= "body">
+      <% @movie_table.each do |line| %>
+    <tr>
+      <td><a href="/movies/<%= line["id"]%>"><%= line["title"]%></a></td>
+      <td><%= line.values[1]%></td>
+      <td><%= line.values[2]%></td>
+      <td><%= line.values[3]%></td>
+      <td><%= line.values[4]%></td>
+    </tr>
+      <%end%>
+    </tbody>
+  </table>
+</html>

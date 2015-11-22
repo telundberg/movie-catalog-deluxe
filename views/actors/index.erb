@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Actors</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/foundation.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <p>
+    <a href="/movies">Back to Movies</a>
+  </p>
+<table>
+  <thead>
+    <tr>
+      <th><%=@actors[0].keys[1]%></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actors.each do |line| %>
+  <tr>
+    <td><a href="/actors/<%= line["id"]%>"><%= line["actor"]%></a></td>
+  </tr>
+    <%end%>
+    </tbody>
+  </table>
+</html>

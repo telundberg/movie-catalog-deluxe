@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Movie Detail</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/foundation.min.css">
+  </head>
+  <p>
+    <a href="/movies">Back to Movies</a>
+  </p>
+  <h1><%= @movie_detail[0].values[0] %></h1>
+
+  <table>
+    <thead>
+      <tr>
+      <th><%=@movie_detail[0].keys[0]%></th>
+      <th><%=@movie_detail[0].keys[1]%></th>
+      <th><%=@movie_detail[0].keys[2]%></th>
+      <th><%=@movie_detail[0].keys[4]%></th>
+      <th><%=@movie_detail[0].keys[5]%></th>
+    </tr>
+    </thead>
+
+    <tbody>
+      <% @movie_detail.each do |line| %>
+    <tr>
+      <td><%= line.values[0]%></td>
+      <td><%= line.values[1]%></td>
+      <td><%= line.values[2]%></td>
+      <td><a href="/actors/<%= line["id"]%>"><%= line["actor"]%></a></td>
+      <td><%= line.values[5]%></td>
+    </tr>
+      <%end%>
+    </tbody>
+  </table>
+</html>
